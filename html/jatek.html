@@ -1,0 +1,274 @@
+<div class="jatek-container">
+    <div class="inputs">
+        <h1>Új játék</h1>
+        <div class="nevbox">
+            <span>Játékos neve</span>
+            <input type="text" name="jatekos-neve" autocomplete="off">
+        </div>
+
+        <div class="osszegbox">
+            <span>Kezdő összeg (Ft)</span>
+            <input type="number" name="kezdo-osszeg" value="3000000" autocomplete="off">
+        </div>
+
+        <div class="szinbox">
+            <span id="label">Játékos színe</span>
+            <div class="select">
+                <span>Válassz...</span>
+                <img src="iconok/arrow_icon.jpg">
+            </div>
+            <div class="options">
+                <div id="fekete" onclick="szinValaszt()">Fekete</div>
+                <div id="feher" onclick="szinValaszt()">Fehér</div>
+                <div id="sarga" onclick="szinValaszt()">Sárga</div>
+                <div id="zold" onclick="szinValaszt()">Zöld</div>
+                <div id="piros" onclick="szinValaszt()">Piros</div>
+                <div id="kek" onclick="szinValaszt()">Kék</div>
+            </div>
+        </div>
+
+        <div class="addgombdiv">
+            <button><img src="iconok/add_icon.png" title="Játékos hozzáadása"></button>
+        </div>
+
+        <div class="jatekosokgombdiv">
+            <button>Játékosok</button>
+        </div>
+
+        <div class="jatekgombdiv">
+            <button>Játék</button>
+        </div>
+    </div>
+
+    <div class="jatekosok-tab">
+        <div class="jatekosokheader">
+            <div><img src="iconok/close_icon.png" title="Bezárás"></div>
+        </div>
+
+        <h2>Nincs játékos</h2>
+
+        <div class="jatekosok">
+            <div class="elsojatekos">
+                <div><img src="iconok/figurine_icon.png"></div>
+                <span></span>
+                <button><img src="iconok/delete_icon.png" title="Játékos törlése"></button>
+            </div>
+
+            <div class="masodikjatekos">
+                <div><img src="iconok/figurine_icon.png"></div>
+                <span></span>
+                <button><img src="iconok/delete_icon.png" title="Játékos törlése"></button>
+            </div>
+            <div class="harmadikjatekos">
+                <div><img src="iconok/figurine_icon.png"></div>
+                <span></span>
+                <button><img src="iconok/delete_icon.png" title="Játékos törlése"></button>
+            </div>
+
+            <div class="negyedikjatekos">
+                <div><img src="iconok/figurine_icon.png"></div>
+                <span></span>
+                <button><img src="iconok/delete_icon.png" title="Játékos törlése"></button>
+            </div>
+
+            <div class="otodikjatekos">
+                <div><img src="iconok/figurine_icon.png"></div>
+                <span></span>
+                <button><img src="iconok/delete_icon.png" title="Játékos törlése"></button>
+            </div>
+
+            <div class="hatodikjatekos">
+                <div><img src="iconok/figurine_icon.png"></div>
+                <span></span>
+                <button><img src="iconok/delete_icon.png" title="Játékos törlése"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="alertbox">
+        <span>Biztos elkezded a játékot?</span>
+        <span>A játékosok száma: </span>
+        <div>
+            <button>Nem</button>
+            <button>Igen</button>
+        </div>
+    </div>
+
+    <div class="jatekban">
+        <div class="mezomutato">
+            <div>
+                <span>Jelenlegi mező</span>
+
+                <p>Leírás</p>
+
+                <div id="nincsFizetes">
+                    <span>Itt nem kell fizetned</span>
+                    <button id="kovetkezojatekos">Következő játékos</button>
+                </div>
+                <div id="vanFizetes">
+                    <span>Ennyit kell fizetned</span>
+                    <span>Döntsd el milyen módon szeretnél fizetni</span>
+                    <div>
+                        <button id="kezpenzzelgomb">Fizetés kézpénzel</button>
+                        <button id="kartyavalgomb">Fizetés kártyával</button>
+                    </div>
+                    <div id="vasarlaserrorVanFiz">
+                        <p>Valamely elem(ek) vásárlása nem lehetséges!</p>
+                    </div>
+                </div>
+                <div id="lehetFizetes">
+                    <span>Vásárolhatsz, ha szeretnél</span>
+                    <span>Ár</span>
+                    <div id="biztositasok">
+                        <div>
+                            <input type="checkbox" id="eletbiztositascheck">
+                            <span>Életbiztosítás(60 000Ft)</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="lakasbiztositascheck">
+                            <span>Lakásbiztosítás(40 000Ft)</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="autobiztositascheck">
+                            <span>Autóbiztosítás(30 000Ft)</span>
+                        </div>
+                    </div>
+                    <div id="berendezesek">
+                        <div>
+                            <input type="checkbox" id="mosogepcheck">
+                            <span>Mosógép(90 000Ft)</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="hutoszekrenycheck">
+                            <span>Hűtőszekrény(80 000Ft)</span>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="tuzhelycheck">
+                            <span>Tűzhely(70 000Ft)</span>
+                        </div>
+                    </div>
+                    <div id="vasarlaserror">
+                        <p>Valamely elem(ek) vásárlása nem lehetséges!</p>
+                    </div>
+                    <div id="fizetesgombok">
+                        <button id="kezpenzzelgomb">Fizetés kézpénzel</button>
+                        <button id="kartyavalgomb">Fizetés kártyával</button>
+                        <button id="kovetkezojatekos">Következő játékos</button>
+                    </div>
+                </div>
+                <div id="szerencsekerek">
+                    <button>Húzás</button>
+                    <button>Ok</button>
+                </div>
+                <button id="ujradob">Újra dob</button>
+            </div>
+        </div>
+
+        <span>*játékosneve* köre</span>
+
+        <div class="jatekfelulet">
+            <div class="box1">
+                <div class="jatekosadatok">
+                    <span>Játékosok</span>
+                    <div id="tablazat">
+                        <table>
+                            <tr>
+                                <th>Név</th>
+                                <th>Egyenleg</th>
+                                <th></th>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div id="atm">
+                        <input type="number" placeholder="Összeg">
+                        <div>
+                            <button><img src="iconok/plus_money_icon.png" title="Pénz befizetés"></button>
+                            <button><img src="iconok/minus_money_icon.png" title="Pénz levétel"></button>
+                        </div>
+                        <button>Kész</button>
+                    </div>
+                </div>
+                <div id="hideunhide">
+                    <img src="iconok/hideunhide_icon.png">
+                </div>
+            </div>
+    
+            <div class="box2">
+                <div class="kockabox">
+                    <div class="kocka">
+                        <div class="face front"></div>
+                        <div class="face back"></div>
+                        <div class="face top"></div>
+                        <div class="face bottom"></div>
+                        <div class="face right"></div>
+                        <div class="face left"></div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="box3">
+                <div class="adatokbox">
+                    <div class="szovegbox">
+                        <span>Egyenleg</span>
+                        <div class="kellekek">
+                            <span>Bérlet</span>
+                            <span>Lakásbiztosítás</span>
+                            <span>Életbiztosítás</span>
+                            <span>Autóbiztosítás</span>
+                            <span>Autó</span>
+                            <span>Konyhabútor</span>
+                            <span>Szobabútor</span>
+                            <span>Mosógép</span>
+                            <span>Hűtőszekrény</span>
+                            <span>Tűzhely</span>
+                            <span>Televízió</span>
+                            <span>Lakás</span>
+                        </div>
+                    </div>
+                    <div class="iconokbox">
+                        <img src="iconok/penz_icon.png" title="Egyenleg">
+                        <img src="iconok/kartya_icon.png" title="Bérlet">
+                        <img src="iconok/biztositas_icon.png" title="Lakásbiztosítás">
+                        <img src="iconok/biztositas_icon.png" title="Életbiztosítás">
+                        <img src="iconok/biztositas_icon.png" title="Autóbiztosítás">
+    
+                        <img src="iconok/auto_icon.png" title="Autó">
+                        <img src="iconok/konyha_icon.png" title="Konyhabútor">
+                        <img src="iconok/szobabutor_icon.png" title="Szobabútor">
+                        <img src="iconok/mosogep_icon.png" title="Mosógép">
+                        <img src="iconok/huto_icon.png" title="Hűtőszekrény">
+                        <img src="iconok/suto_icon.png" title="Tűzhely">
+                        <img src="iconok/tv_icon.png" title="Televízió">
+                        <img src="iconok/lakas_icon.png" title="Lakás">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jatekbefejez-tab">
+        <div>
+            <span>Játék befejezése</span>
+            <p>Ha befejezed ezt a játékot, akkor a későbbiekben már nem tudsz vissza csatlakozni ebbe a játéba, tehát végleg törlöd!</p>
+            <div>
+                <button>Igen, törlöm</button>
+                <button>Mégsem</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="helyezet-tab">
+        <div>
+            <span>Nevű játékos megnyerte a játékot</span>
+            <div>
+                <button id="helyezetbefejezgomb">Játék befejezése</button>
+                <button>Játék folytatása</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert">
+        <span>alert</span>
+    </div>
+</div>
